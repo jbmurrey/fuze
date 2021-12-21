@@ -1,0 +1,40 @@
+ul.bottom-tabs {
+  list-style: none;
+  padding: 0;
+}
+nav#bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+nav ul.bottom-tabs {
+  background-color: #231f20;
+  display: flex;
+  padding: 0px 0 0;
+  margin: 0;
+  list-style-type: none;
+  height: 45px;
+}
+
+nav ul.bottom-tabs li {
+  color: #cccccc;
+  cursor: pointer;
+  flex: 1;
+  text-align: center;
+  padding: 12px;
+  font-weight: 200;
+}
+
+h1,
+nav ul.bottom-tabs li:hover,
+nav ul.bottom-tabs li.active {
+  color: #fdfeff;
+  background-color: #2e2e2e;
+  font-weight: 400;
+}
+
+nav ul.bottom-tabs li a {
+  font-size: 14px;
+}

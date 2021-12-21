@@ -4,13 +4,15 @@ const {app, BrowserWindow} = require('electron')
 
     function createWindow () {
       mainWindow = new BrowserWindow({
-        width: 800,
+        width: 600,
         height: 600,
+        frame:false,
         webPreferences: {
           nodeIntegration: true
         }
       })
       const url = '../fuze/dist/fuze/index.html'
+      //load local server to get html,css,javascript from angular
       mainWindow.loadURL("http://localhost:4200/")
       mainWindow.webContents.openDevTools()
 

@@ -1,0 +1,50 @@
+ul.header {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+nav#bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+nav ul.header {
+  background-color: #231f20;
+  display: flex;
+  padding: 8px 0 0;
+  margin: 0;
+  list-style-type: none;
+  height: 23px;
+}
+
+nav ul.header li.header-right {
+  color: #cccccc;
+  cursor: pointer;
+  flex: 1;
+  font-weight: 200;
+  text-align: end;
+  padding-right: 30px;
+}
+nav ul.header li.header-left {
+  color: #cccccc;
+  cursor: pointer;
+  flex: 1;
+  font-weight: 200;
+  text-align: start;
+  padding-left: 15px;
+}
+nav ul.header li a {
+  font-size: 12px;
+}
+.close {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 15px !important;
+}
+.minus {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 20px !important;
+}
