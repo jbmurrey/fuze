@@ -1,6 +1,9 @@
-<div class="search-bar">
-  <mat-form-field>
+<div class="search-container">
+  <mat-form-field appearance="outline">
     <mat-label>{{ label }}</mat-label>
-    <input matInput />
+    <input matInput placeholder="Enter Website" />
   </mat-form-field>
+  <button *ngIf="button == 'true'" mat-stroked-button color="primary">
+    Download
+  </button>
 </div>

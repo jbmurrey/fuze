@@ -4,6 +4,8 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
 @NgModule({
   declarations: [
     SearchBarComponent
@@ -12,7 +14,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     CommonModule,
     MatTabsModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatButtonModule,
+    MatDialogModule
+
   ],
   exports:[
    SearchBarComponent

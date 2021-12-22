@@ -6,10 +6,14 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./search-bar.component.css']
 })
 export class SearchBarComponent implements OnInit {
-  @Input() label = '';
-  constructor() { }
+  @Input() label = ''; 
+  @Input() button = 'false';
+  
+  constructor() {
+   }
 
   ngOnInit(): void {
+    console.log(this.button)
   }
 
 }

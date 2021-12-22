@@ -31,20 +31,9 @@ nav ul.header li.header-left {
   color: #cccccc;
   cursor: pointer;
   flex: 1;
-  font-weight: 200;
   text-align: start;
   padding-left: 15px;
 }
 nav ul.header li a {
   font-size: 12px;
-}
-.close {
-  padding-left: 10px;
-  padding-right: 10px;
-  font-size: 15px !important;
-}
-.minus {
-  padding-left: 10px;
-  padding-right: 10px;
-  font-size: 20px !important;
 }

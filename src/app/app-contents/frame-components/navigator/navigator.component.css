@@ -19,7 +19,7 @@ nav ul.bottom-tabs {
 }
 
 nav ul.bottom-tabs li {
-  color: #cccccc;
+  color: white;
   cursor: pointer;
   flex: 1;
   text-align: center;
@@ -30,9 +30,9 @@ nav ul.bottom-tabs li {
 h1,
 nav ul.bottom-tabs li:hover,
 nav ul.bottom-tabs li.active {
-  color: #fdfeff;
   background-color: #2e2e2e;
   font-weight: 400;
+  color: #0096ff;
 }
 
 nav ul.bottom-tabs li a {
