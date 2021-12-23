@@ -1,5 +1,4 @@
 import { Component, Input, OnInit,EventEmitter,Output } from '@angular/core';
-
 @Component({
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
@@ -11,17 +10,17 @@ export class SearchBarComponent implements OnInit {
   @Input() label = ''; 
   @Input() input_type = ''
   @Input() button_text = ''
-  
+
   input_value:string = ''
-  
+
   onSubmit(event:Event){
-    console.log(event)
+    console.log(this.input_value)
     event.preventDefault();
     this.submitted.emit(this.input_value)
   }
   constructor() {
+    
    }
   ngOnInit(): void {
-    
   }
 }

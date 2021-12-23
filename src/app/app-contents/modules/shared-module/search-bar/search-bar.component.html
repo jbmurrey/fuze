@@ -1,22 +1,7 @@
-<!-- <div class="search-container">
-  <mat-form-field appearance="outline">
-    <mat-label>{{ label }}</mat-label>
-    <form (submit)="onSubmit($event)">
-      <input #text (input)="input_value = text.value" matInput />
-      <mat-icon *ngIf="input_type == 'search'" matPrefix>search</mat-icon>
-    </form>
-  </mat-form-field>
-  <button
-    (click)="onSubmit($event)"
-    *ngIf="button == 'true'"
-    mat-stroked-button
-  >
-    {{ button_name }}
-  </button>
-</div> -->
-
 <div class="input-group mb-3 mx-auto pt-5">
   <input
+    [ngClass]="{ icon: input_type == 'search' }"
+    [(ngModel)]="input_value"
     type="text"
     class="form-control"
     placeholder="{{ label }}"
