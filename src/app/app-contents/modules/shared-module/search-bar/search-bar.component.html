@@ -1,9 +1,36 @@
-<div class="search-container">
+<!-- <div class="search-container">
   <mat-form-field appearance="outline">
     <mat-label>{{ label }}</mat-label>
-    <input matInput placeholder="Enter Website" />
+    <form (submit)="onSubmit($event)">
+      <input #text (input)="input_value = text.value" matInput />
+      <mat-icon *ngIf="input_type == 'search'" matPrefix>search</mat-icon>
+    </form>
   </mat-form-field>
-  <button *ngIf="button == 'true'" mat-stroked-button color="primary">
-    Download
+  <button
+    (click)="onSubmit($event)"
+    *ngIf="button == 'true'"
+    mat-stroked-button
+  >
+    {{ button_name }}
   </button>
+</div> -->
+
+<div class="input-group mb-3 mx-auto pt-5">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="{{ label }}"
+    aria-describedby="basic-addon2"
+  />
+  <div class="input-group-append">
+    <button
+      *ngIf="input_type == 'button'"
+      (click)="onSubmit($event)"
+      class="btn btn-outline-secondary"
+      type="button"
+    >
+      {{ button_text }}
+    </button>
+    <i *ngIf="input_type == 'search'" class="fas fa-search"></i>
+  </div>
 </div>
