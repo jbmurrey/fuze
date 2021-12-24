@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ElectronService } from 'src/app/app-contents/services/electron/electron.service';
 
 @Component({
   selector: 'app-websites-home',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./websites-home.component.css']
 })
 export class WebsitesHomeComponent implements OnInit {
+  constructor(private electron: ElectronService) { }
 
-  constructor() { }
-
+  setInput(event:string){
+    console.log(event)
+     //this.electron.ipcRenderer.send('data:recieved',data)
+  }
   ngOnInit(): void {
   }
-
 }
