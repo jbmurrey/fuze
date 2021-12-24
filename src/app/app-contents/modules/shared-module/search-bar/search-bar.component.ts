@@ -14,7 +14,6 @@ export class SearchBarComponent implements OnInit {
   input_value:string = ''
 
   onSubmit(event:Event){
-    console.log(this.input_value)
     event.preventDefault();
     this.submitted.emit(this.input_value)
   }

@@ -1,4 +1,4 @@
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow,ipcMain} = require('electron')
 
     let mainWindow
 
@@ -8,7 +8,8 @@ const {app, BrowserWindow} = require('electron')
         height: 600,
         frame:false,
         webPreferences: {
-          nodeIntegration: true
+          nodeIntegration: true,
+          contextIsolation: false,
         }
       })
       const url = '../fuze/dist/fuze/index.html'
@@ -29,4 +30,8 @@ const {app, BrowserWindow} = require('electron')
 
     app.on('activate', function () {
       if (mainWindow === null) createWindow()
+    })
+
+    ipcMain.on('message',(e,value)=>{
+      console.log(value)
     })

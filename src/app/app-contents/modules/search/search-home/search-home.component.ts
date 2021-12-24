@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ElectronService } from 'src/app/app-contents/services/electron/electron.service';
 
 @Component({
   selector: 'app-search-home',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchHomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private electron: ElectronService) { }
 
   ngOnInit(): void {
+  this.electron.ipcRenderer.send('message','here')
   }
 
 }
