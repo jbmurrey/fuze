@@ -1,6 +1,6 @@
-const electron = window.require('electron');
-const path = window.require('path');
-const fs = window.require('fs');
+const electron = require('electron');
+const path = require('path');
+const fs = require('fs');
 
 class Store {
   constructor(options) {
@@ -17,9 +17,8 @@ class Store {
   }
 
   set(key, val) {
-    this.data[key] = val;
-    fs.writeFileSync(this.path, JSON.stringify(this.data));
-    
+    this.data[key] = val 
+    fs.writeFileSync(this.path, JSON.stringify(this.data));   
   }
 }
 

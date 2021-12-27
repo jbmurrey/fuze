@@ -38,9 +38,10 @@ const Store = require('./Store')
       if (mainWindow === null) createWindow()
     })
 
-    ipcMain.on('data:recieved',(e,value)=>{
-      store.set('products',value);
-      console.log("here");
-      mainWindow.webContents.send('data:get',store.get('products'));
+    ipcMain.on('products:post',(e,values,key)=>{
+      store.set(key,values[0]);
     })
-    
+    ipcMain.handle('products:get', async () => {
+      const result = store.get('products')
+      return result
+    })

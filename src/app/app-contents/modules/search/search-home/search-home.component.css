@@ -1,3 +1,32 @@
-p{
+mat-table{
+    margin-top: 40px;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    background-color: black;
+    border-radius: 8px;
+    
+}
+mat-cell{
     color:white;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+mat-paginator{
+    background-color: black;
+    color: white;
+    border-radius: 0px;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+}
+.not-empty-select.mat-selected {
+    color: green !important;
+  }
+  
+  :host ::ng-deep .mat-select-value-text {
+    color: white !important;
+  }
+.visible{
+    visibility: hidden;
 }
