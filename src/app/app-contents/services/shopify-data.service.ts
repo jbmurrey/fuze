@@ -2,20 +2,51 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ElectronService } from './electron/electron.service';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class ShopifyDataService {
   constructor(private http:HttpClient, private electron:ElectronService) { }
-
-  getFirstTenPages(web_url: string) {
+  web_url:string
+   getNumPages(url:string){
+     this.web_url = url
+     this.recursiveAlgorithim(1,2048,0)
+  }
+  recursiveAlgorithim(_min:number,_max:number,_lim:number){
+    if(_max-_min == 1){
+      this.getFirstTenPages(this.web_url,_min)
+      return;
+    }
+    this.search(this.web_url,_max).subscribe((res:any)=>{
+      if (res.products.length != 0){
+        if(_lim == 0){
+          return this.recursiveAlgorithim(_max,_max*2,0)
+        }
+        let temp = _max;
+        _max = Math.floor(_max + (_lim - _max)/2) + 1;
+        _min = temp;
+        return this.recursiveAlgorithim(_min,_max,_lim)
+      }
+      else{
+        return this.recursiveAlgorithim(_min,Math.floor(_max -(_max-_min)/2),_max - 1)
+      }
+    })
+  }
+  
+  getFirstTenPages(web_url: string,last_page:number) {
     let data = [];
-    for (let i=1;i<=10;i++) {
-      this.search(web_url, i).subscribe(res => {
-        data = data.concat(res);
-        if(i == 10){
-          console.log(data);
-          return data;
+    let num = 0;
+    console.log(last_page)
+    for (let i=1;i<=last_page;i++) {
+      this.search(web_url, i).subscribe((res:any) => {
+        num++;
+        console.log(num);
+        data = data.concat(res.products);
+        if(num == last_page){
+          console.log(web_url + ": " + data.length )
+          console.log(data)
+          this.electron.ipcRenderer.send('data:recieved',data)
         }
       });
     }

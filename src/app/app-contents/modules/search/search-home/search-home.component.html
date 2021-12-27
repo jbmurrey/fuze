@@ -1,1 +1,10 @@
-<app-search-bar [input_type]="'search'" [label]="'search'"></app-search-bar>
+<app-search-bar
+  (oninput)="setInput($event)"
+  [input_type]="'search'"
+  [label]="'search'"
+></app-search-bar>
+
+<p>{{ data.length }}</p>
+<div *ngFor="let d of data">
+  <p>hello</p>
+</div>

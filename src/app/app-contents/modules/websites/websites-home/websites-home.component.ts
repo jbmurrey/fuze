@@ -10,8 +10,10 @@ export class WebsitesHomeComponent implements OnInit {
   constructor(private electron: ElectronService, private shopify:ShopifyDataService) { }
   data = []
   setInput(event:string){
-    console.log(this.shopify.getFirstTenPages(event))
-    this.electron.ipcRenderer.send('data:recieved','data');
+    //console.log(this.shopify.getFirstTenPages(event))
+    this.shopify.getNumPages(event);
+  
+    //this.electron.ipcRenderer.send('data:recieved','data');
   }
   ngOnInit(): void {
   }

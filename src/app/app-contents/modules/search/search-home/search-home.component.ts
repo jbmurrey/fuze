@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ElectronService } from 'src/app/app-contents/services/electron/electron.service';
 
 @Component({
   selector: 'app-search-home',
@@ -7,11 +6,27 @@ import { ElectronService } from 'src/app/app-contents/services/electron/electron
   styleUrls: ['./search-home.component.css']
 })
 export class SearchHomeComponent implements OnInit {
-
-  constructor(private electron: ElectronService) { }
-
-  ngOnInit(): void {
-  this.electron.ipcRenderer.send('message','here')
+  data:any = [];
+  query:any = [];
+  constructor() {
   }
 
+
+setInput(event:string){
+   console.log(event)
 }
+ queryData(event:string){
+   
+  for(let i =0; i<20;i++){
+     let product = this.data[i];
+     if(product.title.indexOf(event) != -1){
+       this.query = this.query.concat(product);
+   }
+ }
+}
+  ngOnInit(): void {
+    
+   }
+  }
+
+

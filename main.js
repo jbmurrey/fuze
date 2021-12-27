@@ -1,7 +1,13 @@
 const {app, BrowserWindow,ipcMain} = require('electron')
-
+const Store = require('./Store')
     let mainWindow
+    
+    const store = new Store({
+      configName: 'products',
+      products:{
 
+      }
+    });
     function createWindow () {
       mainWindow = new BrowserWindow({
         width: 600,
@@ -32,6 +38,9 @@ const {app, BrowserWindow,ipcMain} = require('electron')
       if (mainWindow === null) createWindow()
     })
 
-    ipcMain.on('message',(e,value)=>{
-      console.log(value)
+    ipcMain.on('data:recieved',(e,value)=>{
+      store.set('products',value);
+      console.log("here");
+      mainWindow.webContents.send('data:get',store.get('products'));
     })
+    

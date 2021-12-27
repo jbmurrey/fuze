@@ -1,5 +1,6 @@
 <div class="input-group mb-3 mx-auto pt-5">
   <input
+    (keyup)="onInput($event)"
     [ngClass]="{ icon: input_type == 'search' }"
     [(ngModel)]="input_value"
     type="text"
